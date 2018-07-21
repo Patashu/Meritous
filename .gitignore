@@ -1,0 +1,51 @@
+# -*- conf-unix -*- vim:ft=conf
+# The above comment makes Emacs and vim treat this file as a configuration file
+
+*.[oa]
+*.ann
+*.DS_Store
+core
+core.*
+err.txt
+TAGS
+tags
+cscope.*
+*.massif
+callgrind.out.*
+*.dSYM
+tmp/
+.dir-locals.el
+stderr.txt
+stdout.txt
+SaveFile.sav
+
+# Patch related junk
+*.diff
+*.orig
+*.rej
+
+# Xcode cruft
+/source/build
+*.pbxuser
+*.perspectivev3
+*.mode1v3
+
+# Visual C++ cruft
+*.suo
+*.ncb
+*.vcproj.*.user
+
+# Visual C++ outputs
+/source/*.exe
+/source/*.[pi]db
+/source/*.dll
+
+# Windows thumbnail files
+Thumbs.db
+
+# eclipse project files
+.cproject
+.project
+.settings
+.settings/
+.metadata/
