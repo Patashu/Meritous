@@ -1,0 +1,44 @@
+Building on Windows using MSYS2:
+
+1) https://github.com/crawl/crawl/blob/master/crawl-ref/INSTALL.txt ctrl+f MSYS2 and follow instructions from here.
+
+However, we need to build in 32-bit, not 64-bit.
+
+So instead of
+
+pacman -S mingw-w64-x86_64-toolchain
+
+do
+
+pacman -S mingw-w64-i686-toolchain
+
+and instead of
+
+export PATH=$PATH:/mingw64/bin
+
+do
+
+export PATH=$PATH:/mingw32/bin
+
+Additionally, based off of https://github.com/mangband/mangband/wiki/MSYS2 with alterations, install the following libraries:
+
+pacman -S mingw-w64-i686-gcc
+pacman -S mingw-w64-i686-SDL
+pacman -S mingw-w64-i686-SDL_mixer
+pacman -S mingw-w64-i686-SDL_image
+pacman -S mingw-w64-i686-libwebp
+pacman -S mingw-w64-i686-libmikmod
+
+2) Navigate to the directory where 'Makefile' is, still in the MSYS2 console, and run
+
+make
+
+If everything goes according to plan, meritous.exe will be compiled from source.
+
+3) meritous.exe requires several dlls to run. You can use the ones provided in the Github respository, or grab them yourself from
+
+C:\msys64\mingw64\bin
+
+(or whever it's installed on your computer).
+
+However, there is one exception. I found that 'libSDL_mixer-1-2-0.dll' that comes with 'mingw-w64-i686-SDL_mixer' does not run .xm files, and therefore can't play the music in Meritous. In this case only, download the compiled executible from the official Meritous website ( http://asceai.net/meritous/ ) and copy over 'SDL_mixer.dll', renaming it to ''libSDL_mixer-1-2-0.dll', and it will start working.
