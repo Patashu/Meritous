@@ -2,7 +2,7 @@ Building on Windows using MSYS2:
 
 1) https://github.com/crawl/crawl/blob/master/crawl-ref/INSTALL.txt ctrl+f MSYS2 and follow instructions from here.
 
-However, we need to build in 32-bit, not 64-bit.
+However, we need to build in 32-bit, not 64-bit. Make sure to open the 32-bit MSYS2 console, not the 64-bit one.
 
 So instead of
 
@@ -29,7 +29,7 @@ pacman -S mingw-w64-i686-SDL_image
 pacman -S mingw-w64-i686-libwebp
 pacman -S mingw-w64-i686-libmikmod
 
-2) Navigate to the directory where 'Makefile' is, still in the MSYS2 console, and run
+2) Navigate to the directory where 'Makefile' is, still in the 32-bit MSYS2 console, and run
 
 make
 
